@@ -33,7 +33,7 @@
     "Input": [
       {
         "ItemId": "Ingredient_Life_Essence",
-        "Quantity": 6
+        "Quantity": 5
       }
     ],
     "Output": [
@@ -49,10 +49,10 @@
         "Categories": [
           "Seeds"
         ],
-        "RequiredTierLevel": 4
+        "RequiredTierLevel": 3
       }
     ]
   },
-  "ItemLevel": 12,
+  "ItemLevel": 11,
   "Icon": "Icons/ItemsGenerated/Plant_Seeds_Beet.png"
 }

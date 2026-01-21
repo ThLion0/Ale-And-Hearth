@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "com.thlion_"
-version = "0.0.1.1"
+version = "0.0.2"
 
 repositories {
     mavenCentral()
@@ -14,6 +14,14 @@ dependencies {
 }
 
 tasks {
+    processResources {
+        inputs.property("version", project.version)
+
+        filesMatching("manifest.json") {
+            expand("version" to project.version)
+        }
+    }
+
     jar {
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 

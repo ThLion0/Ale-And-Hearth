@@ -40,9 +40,6 @@
     "Gathering": {
       "Breaking": {
         "GatherType": "Rocks"
-      },
-      "Soft": {
-        "IsWeaponBreakable": false
       }
     },
     "HitboxType": "Fireplace_Chimney",

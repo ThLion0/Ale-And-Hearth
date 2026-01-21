@@ -42,7 +42,7 @@
     "Input": [
       {
         "ItemId": "Plant_Crop_Beet_Item",
-        "Quantity": 1
+        "Quantity": 2
       }
     ],
     "BenchRequirement": [

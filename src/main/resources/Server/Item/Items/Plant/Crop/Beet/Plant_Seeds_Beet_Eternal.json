@@ -51,11 +51,11 @@
     "Input": [
       {
         "ItemId": "Ingredient_Life_Essence",
-        "Quantity": 60
+        "Quantity": 50
       },
       {
         "ItemId": "Plant_Crop_Beet_Item",
-        "Quantity": 10
+        "Quantity": 25
       },
       {
         "ItemId": "Plant_Seeds_Beet",
@@ -70,7 +70,7 @@
     ],
     "BenchRequirement": [
       {
-        "RequiredTierLevel": 5,
+        "RequiredTierLevel": 4,
         "Type": "Crafting",
         "Id": "Farmingbench",
         "Categories": [
@@ -78,9 +78,9 @@
         ]
       }
     ],
-    "RequiredMemoriesLevel": 4
+    "RequiredMemoriesLevel": 3
   },
-  "ItemLevel": 18,
+  "ItemLevel": 17,
   "Scale": 1.0,
   "Particles": [
     {

@@ -55,7 +55,7 @@
       },
       {
         "ItemId": "Plant_Crop_Grape_Item",
-        "Quantity": 10
+        "Quantity": 30
       },
       {
         "ItemId": "Plant_Seeds_Grape",
@@ -70,7 +70,7 @@
     ],
     "BenchRequirement": [
       {
-        "RequiredTierLevel": 6,
+        "RequiredTierLevel": 5,
         "Type": "Crafting",
         "Id": "Farmingbench",
         "Categories": [
@@ -80,7 +80,7 @@
     ],
     "RequiredMemoriesLevel": 4
   },
-  "ItemLevel": 23,
+  "ItemLevel": 21,
   "Scale": 1.0,
   "Particles": [
     {

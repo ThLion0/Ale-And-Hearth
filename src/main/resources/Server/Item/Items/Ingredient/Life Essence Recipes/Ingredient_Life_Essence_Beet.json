@@ -5,7 +5,7 @@
   },
   "Variant": true,
   "Parent": "Ingredient_Life_Essence",
-  "ItemLevel": 7,
+  "ItemLevel": 6,
   "Recipe": {
     "Input": [
       {
@@ -16,12 +16,12 @@
     "Output": [
       {
         "ItemId": "Ingredient_Life_Essence",
-        "Quantity": 8
+        "Quantity": 6
       }
     ],
     "BenchRequirement": [
       {
-        "RequiredTierLevel": 5,
+        "RequiredTierLevel": 4,
         "Type": "Crafting",
         "Id": "Farmingbench",
         "Categories": [

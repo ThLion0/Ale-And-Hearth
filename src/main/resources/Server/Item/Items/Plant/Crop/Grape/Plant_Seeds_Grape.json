@@ -33,7 +33,7 @@
     "Input": [
       {
         "ItemId": "Ingredient_Life_Essence",
-        "Quantity": 7
+        "Quantity": 6
       }
     ],
     "Output": [
@@ -49,10 +49,10 @@
         "Categories": [
           "Seeds"
         ],
-        "RequiredTierLevel": 5
+        "RequiredTierLevel": 4
       }
     ]
   },
-  "ItemLevel": 17,
+  "ItemLevel": 16,
   "Icon": "Icons/ItemsGenerated/Plant_Seeds_Grape.png"
 }
