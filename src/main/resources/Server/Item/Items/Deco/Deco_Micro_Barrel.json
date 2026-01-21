@@ -1,0 +1,83 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Deco_Micro_Barrel.name"
+  },
+  "Categories": [
+    "Furniture.Furniture"
+  ],
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ResourceTypeId": "Wood_Hardwood",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Bar_Iron",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Bench_Brewing_Bench",
+        "Categories": [
+          "Bench_Brewing_Bench_Deco"
+        ]
+      }
+    ]
+  },
+  "Set": "Furniture_Tavern",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "CustomModel": "Blocks/Miscellaneous/Micro_Barrel.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Benches/BrewingBench.png",
+        "Weight": 1
+      }
+    ],
+    "HitboxType": "Food_Large",
+    "RandomRotation": "YawStep1",
+    "Gathering": {
+      "Breaking": {},
+      "Soft": {}
+    },
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "BlockParticleSetId": "Dust",
+    "BlockSoundSetId": "Branch",
+    "ParticleColor": "#5b3222",
+    "CustomModelScale": 1.2
+  },
+  "PlayerAnimationsId": "Item",
+  "IconProperties": {
+    "Scale": 1,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      1.0,
+      -7.2
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Deco"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Wood",
+  "Icon": "Icons/ItemsGenerated/Deco_Micro_Barrel.png",
+  "ItemLevel": 6
+}

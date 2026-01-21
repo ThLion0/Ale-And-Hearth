@@ -1,0 +1,28 @@
+{
+  "Group": "HyBox",
+  "Name": "Brewery",
+  "Version": "0.0.1",
+  "Main": "com.thlion_.brewery.BreweryPlugin",
+  "ServerVersion": "*",
+  "Authors": [
+    {
+      "Name": "ThLion_",
+      "Email": "",
+      "Url": ""
+    },
+    {
+      "Name": "ZeroCaty",
+      "Email": "",
+      "Url": ""
+    }
+  ],
+  "Website": "website",
+  "Dependencies": {
+
+  },
+  "OptionalDependencies": {
+
+  },
+  "DisabledByDefault": false,
+  "IncludesAssetPack": true
+}

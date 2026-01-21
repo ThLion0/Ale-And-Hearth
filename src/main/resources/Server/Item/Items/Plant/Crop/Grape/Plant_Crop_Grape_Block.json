@@ -1,0 +1,236 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Plant_Crop_Grape_StageFinal.name"
+  },
+  "Parent": "Template_Crop_Block",
+  "BlockType": {
+    "RandomRotation": "YawStep90",
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/Plants/Seeds_Textures/Grape.png",
+        "Weight": 1
+      }
+    ],
+    "BlockSoundSetId": "Seeds",
+    "State": {
+      "Definitions": {
+        "Stage1": {
+          "CustomModel": "Blocks/Foliage/Plants/Grape_Crop_Stage1.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Foliage/Plants/Grape_Crop.png",
+              "Weight": 1
+            }
+          ],
+          "Gathering": {
+            "Soft": {
+              "IsWeaponBreakable": false,
+              "DropList": "Drops_Plant_Crop_Grape_Stage1"
+            }
+          },
+          "HitboxType": "Plant_Small",
+          "BlockParticleSetId": "Grass",
+          "BlockSoundSetId": "Plant",
+          "ParticleColor": "#780938"
+        },
+        "Stage2": {
+          "CustomModel": "Blocks/Foliage/Plants/Grape_Crop_Stage2.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Foliage/Plants/Grape_Crop.png",
+              "Weight": 1
+            }
+          ],
+          "Gathering": {
+            "Soft": {
+              "IsWeaponBreakable": false,
+              "DropList": "Drops_Plant_Crop_Grape_Stage2"
+            }
+          },
+          "HitboxType": "Plant_Large",
+          "BlockParticleSetId": "Grass",
+          "BlockSoundSetId": "Plant",
+          "ParticleColor": "#780938"
+        },
+        "Stage3": {
+          "CustomModel": "Blocks/Foliage/Plants/Grape_Crop_Stage3.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Foliage/Plants/Grape_Crop.png",
+              "Weight": 1
+            }
+          ],
+          "Gathering": {
+            "Soft": {
+              "IsWeaponBreakable": false,
+              "DropList": "Drops_Plant_Crop_Grape_Stage3"
+            }
+          },
+          "HitboxType": "Plant_Full",
+          "BlockParticleSetId": "Grass",
+          "BlockSoundSetId": "Plant",
+          "ParticleColor": "#780938"
+        },
+        "Stage4": {
+          "CustomModel": "Blocks/Foliage/Plants/Grape_Crop_Stage4.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Foliage/Plants/Grape_Crop.png",
+              "Weight": 1
+            }
+          ],
+          "Gathering": {
+            "Soft": {
+              "IsWeaponBreakable": false,
+              "DropList": "Drops_Plant_Crop_Grape_Stage4"
+            }
+          },
+          "HitboxType": "Plant_Full",
+          "BlockParticleSetId": "Grass",
+          "BlockSoundSetId": "Plant",
+          "ParticleColor": "#780938"
+        },
+        "StageFinal": {
+          "CustomModel": "Blocks/Foliage/Plants/Grape_Crop_Stage5.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Foliage/Plants/Grape_Crop.png",
+              "Weight": 1
+            }
+          ],
+          "InteractionHint": "server.interactionHints.harvest",
+          "Gathering": {
+            "Harvest": {
+              "DropList": "Drops_Plant_Crop_Grape_StageFinal_Harvest"
+            },
+            "Soft": {
+              "IsWeaponBreakable": false,
+              "DropList": "Drops_Plant_Crop_Grape_StageFinal"
+            }
+          },
+          "BlockParticleSetId": "Grass",
+          "ParticleColor": "#780938",
+          "BlockSoundSetId": "Plant",
+          "HitboxType": "Plant_Full"
+        }
+      }
+    },
+    "Farming": {
+      "Stages": {
+        "Default": [
+          {
+            "Duration": {
+              "Min": 10500,
+              "Max": 10500
+            },
+            "Type": "BlockState",
+            "State": "default"
+          },
+          {
+            "Duration": {
+              "Min": 18975,
+              "Max": 18975
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage1"
+          },
+          {
+            "Duration": {
+              "Min": 18975,
+              "Max": 18975
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage2"
+          },
+          {
+            "Duration": {
+              "Min": 18975,
+              "Max": 18975
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage3"
+          },
+          {
+            "Duration": {
+              "Min": 18975,
+              "Max": 18975
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage4"
+          },
+          {
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow_Stage_Complete",
+            "State": "StageFinal"
+          }
+        ],
+        "Harvested": [
+          {
+            "Duration": {
+              "Min": 18975,
+              "Max": 18975
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage2"
+          },
+          {
+            "Duration": {
+              "Min": 18975,
+              "Max": 18975
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage3"
+          },
+          {
+            "Duration": {
+              "Min": 18975,
+              "Max": 18975
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage4"
+          },
+          {
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow_Stage_Complete",
+            "State": "StageFinal"
+          }
+        ]
+      },
+      "StartingStageSet": "Default",
+      "ActiveGrowthModifiers": [
+        "Fertilizer",
+        "Water",
+        "LightLevel"
+      ],
+      "StageSetAfterHarvest": "Harvested"
+    },
+    "Gathering": {
+      "Soft": {
+        "IsWeaponBreakable": false,
+        "DropList": "Drops_Plant_Crop_Grape_Block"
+      }
+    },
+    "CustomModelScale": 0.9,
+    "ParticleColor": "#780938"
+  },
+  "IconProperties": {
+    "Scale": 1.115,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -4.2
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Plant_Crop_Beet_Block.png"
+}

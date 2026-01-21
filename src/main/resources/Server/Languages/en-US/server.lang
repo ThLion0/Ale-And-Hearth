@@ -1,0 +1,100 @@
+# === items ===
+
+items.Bench_Brewing_Bench.name = Brewing Workbench
+items.Bench_Brewing_Bench.description = Used to craft brewing accessories.
+
+items.Bench_Brewing_Keg.name = Fermentation Barrel
+items.Bench_Brewing_Keg.description = Used to brew an alcoholic beverages.\n\n<i>A cozy sealed barrel where yeast throws a tiny party and turns your brew into beer, cider, and other tasty drinks over time.</i>
+
+items.Bench_Oven.name = Oven
+items.Bench_Oven.description = Cook basic meals.
+
+# === crops ===
+
+items.Plant_Crop_Hops.name = Hops
+items.Plant_Crop_Hops_StageFinal.name = Mature Hops
+items.Plant_Seeds_Hops.name = Hops Seed Bag
+items.Plant_Seeds_Hops.description = Grows Hops
+items.Plant_Seeds_Hops_Eternal.name = Hops Seed Bag (Eternal)
+items.Plant_Seeds_Hops_Eternal.description = Grows Hops
+
+items.Plant_Crop_Beet.name = Beetroot
+items.Plant_Crop_Beet_StageFinal.name = Mature Beetroot
+items.Plant_Seeds_Beet.name = Beetroot Seed Bag
+items.Plant_Seeds_Beet.description = Grows Beetroot
+items.Plant_Seeds_Beet_Eternal.name = Beetroot Seed Bag (Eternal)
+items.Plant_Seeds_Beet_Eternal.description = Grows Beetroot
+
+items.Plant_Crop_Grape.name = Grape
+items.Plant_Crop_Grape_StageFinal.name = Mature Grape
+items.Plant_Seeds_Grape.name = Grape Seed Bag
+items.Plant_Seeds_Grape.description = Grows Grape
+items.Plant_Seeds_Grape_Eternal.name = Grape Seed Bag (Eternal)
+items.Plant_Seeds_Grape_Eternal.description = Grows Grape
+
+# === ingredient ===
+
+items.Ingredient_Malt.name = Malt
+items.Ingredient_Malt.description = Used for brewing alcoholic beverages.\n\n<i>Sprouted and dried grain that forms the base of beer, ale, and other fermented drinks.</i>
+
+items.Ingredient_Sugar.name = Sugar
+items.Ingredient_Sugar.description = Used to boost fermentation in brewing recipes.\n\n<i>Sweet crystals that give yeast an extra kick, helping turn your mix into stronger, tastier drinks faster.</i>
+
+items.Ingredient_Yeasts.name = Yeasts
+items.Ingredient_Yeasts.description = Used to start fermentation in brewing recipes.\n\n<i>Tiny living microbes that do all the hard work — turning your brew into proper beer, cider, and other fermented drinks.</i>
+
+# === decorations ===
+
+items.Deco_Hops_Bowl.name = Hops Bowl
+items.Deco_Micro_Barrel.name = Mini Barrel
+items.Deco_Fireplace.name = Fireplace
+items.Deco_Fireplace_Chimney.name = Fireplace Chimney
+items.Deco_Fireplace_Headpiece.name = Fireplace Headpiece
+items.Furniture_Tavern_Bar_Table.name = Bar Table
+items.Furniture_Tavern_Barrel_Table.name = Barrel Table
+items.Furniture_Tavern_High_Bar_Stool.name = High Stool
+
+# === mugs ===
+
+items.Beer_Ale_Mug.name = Ale Mug
+items.Beer_Ale_Mug.description = Restores <color is="#ffffff">10%</color> health.\nAlcohol Strength: <color is="#ffffff">Light</color>\n\n<i>Liquid courage in a wooden mug.</i>
+
+items.Brewery_Beer_Mug.name = Beer Mug
+items.Brewery_Beer_Mug.description = Restores <color is="#ffffff">10%</color> health.\nAlcohol Strength: <color is="#ffffff">Strong</color>\n\n<i>A proper mug of beer. "One more" is inevitable.</i>
+
+items.Brewery_Berry_Cider_Mug.name = Berry Cider Mug
+items.Brewery_Berry_Cider_Mug.description = Restores <color is="#ffffff">10%</color> health.\nAlcohol Strength: <color is="#ffffff">Light</color>\n\n<i>Sweet, fruity, and dangerously easy to chug.</i>
+
+items.Brewery_Caramel_Beer_Mug.name = Caramel Ale Mug
+items.Brewery_Caramel_Beer_Mug.description = Restores <color is="#ffffff">10%</color> health.\nAlcohol Strength: <color is="#ffffff">Medium</color>\n\n<i>Dessert in a mug. Not approved by dentists.</i>
+
+items.Brewery_Chili_Beer_Mug.name = Chilli Ale Mug
+items.Brewery_Chili_Beer_Mug.description = Restores <color is="#ffffff">10%</color> health.\nAlcohol Strength: <color is="#ffffff">Strong</color>\n\n<i>Spicy enough to wake the dead. Or at least your tongue.</i>
+
+items.Brewery_Cider_Mug.name = Cider Mug
+items.Brewery_Cider_Mug.description = Restores <color is="#ffffff">10%</color> health.\nAlcohol Strength: <color is="#ffffff">Medium</color>\n\n<i>Sweet apples, sharp decisions.</i>
+
+items.Brewery_Kvas_Mug.name = Kvass Mug
+items.Brewery_Kvas_Mug.description = Restores <color is="#ffffff">10%</color> health.\nAlcohol Strength: <color is="#ffffff">Very Light</color>\n\n<i>Technically not booze. Emotionally — absolutely is.</i>
+
+items.Brewery_Pumpkin_Beer_Mug.name = Pumpkin Ale Mug
+items.Brewery_Pumpkin_Beer_Mug.description = Restores <color is="#ffffff">10%</color> health.\nAlcohol Strength: <color is="#ffffff">Strong</color>\n\n<i>Autumn in a mug. Cozy, warm, and slightly suspicious.</i>
+
+items.Brewery_Wine_Mug.name = Wine Mug
+items.Brewery_Wine_Mug.description = Restores <color is="#ffffff">10%</color> health.\nAlcohol Strength: <color is="#ffffff">Strong</color>\n\n<i>For when you want to feel fancy before fighting monsters.</i>
+
+items.Brewery_Vodka_Mug.name = Vodka Mug
+items.Brewery_Vodka_Mug.description = Restores <color is="#ffffff">10%</color> health.\nAlcohol Strength: <color is="#ffffff">Very Strong</color>\n\n<i>One sip and you start winning arguments you never had.</i>
+
+
+# === commands ===
+
+# commands.drunk.desc = 0
+# commands.drunk.set.desc = 1
+# commands.drunk.set.arg.level = 2
+# commands.drunk.set.nocomponent = 3
+commands.drunk.set.success = New drunk level set: {level}.
+# commands.drunk.get.desc = 4
+commands.drunk.get.success = Drunk level: {level} (Out of {max}).
+# commands.drunk.reset.desc = 5
+commands.drunk.reset.success = Drunk level reset.

@@ -1,0 +1,7 @@
+{
+  "Type": "CameraShake",
+  "CameraShake": "Drunk_Shake",
+  "Intensity": {
+    "Value": 0.05
+  }
+}

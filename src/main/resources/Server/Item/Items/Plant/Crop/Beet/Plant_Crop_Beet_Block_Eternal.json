@@ -1,0 +1,181 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Plant_Crop_Beet_StageFinal.name"
+  },
+  "Parent": "Plant_Crop_Beet_Block",
+  "BlockType": {
+    "State": {
+      "Definitions": {
+        "Stage1": {
+          "CustomModel": "Blocks/Foliage/Plants/Beet_Crop_Stage1.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Foliage/Plants/Beet_Crop.png",
+              "Weight": 1
+            }
+          ],
+          "Gathering": {
+            "Soft": {
+              "DropList": "Drops_Plant_Crop_Beet_Eternal_Stage1"
+            }
+          },
+          "HitboxType": "Plant_Small",
+          "BlockParticleSetId": "Grass",
+          "BlockSoundSetId": "Plant",
+          "ParticleColor": "#891503"
+        },
+        "Stage2": {
+          "CustomModel": "Blocks/Foliage/Plants/Beet_Crop_Stage2.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Foliage/Plants/Beet_Crop.png",
+              "Weight": 1
+            }
+          ],
+          "CustomModelScale": 0.9,
+          "Gathering": {
+            "Soft": {
+              "DropList": "Drops_Plant_Crop_Beet_Eternal_Stage2"
+            }
+          },
+          "HitboxType": "Plant_Medium",
+          "BlockParticleSetId": "Grass",
+          "BlockSoundSetId": "Plant",
+          "ParticleColor": "#891503"
+        },
+        "StageFinal": {
+          "CustomModel": "Blocks/Foliage/Plants/Beet_Crop_Stage3.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Foliage/Plants/Beet_Crop.png",
+              "Weight": 1
+            }
+          ],
+          "CustomModelScale": 0.65,
+          "InteractionHint": "server.interactionHints.harvest",
+          "Interactions": {
+            "Use": {
+              "Interactions": [
+                {
+                  "Type": "HarvestCrop"
+                }
+              ]
+            }
+          },
+          "Gathering": {
+            "Harvest": {
+              "DropList": "Drops_Plant_Crop_Beet_Eternal_StageFinal_Harvest"
+            },
+            "Soft": {
+              "DropList": "Drops_Plant_Crop_Beet_Eternal_StageFinal"
+            }
+          },
+          "BlockParticleSetId": "Grass",
+          "ParticleColor": "#891503",
+          "BlockSoundSetId": "Plant",
+          "HitboxType": "Plant_Medium"
+        }
+      }
+    },
+    "Particles": [
+      {
+        "SystemId": "Plant_Eternal",
+        "DetachedFromModel": false,
+        "Scale": 0.5,
+        "PositionOffset": {
+          "X": 0.0,
+          "Z": 0.5,
+          "Y": -0.5
+        }
+      }
+    ],
+    "Farming": {
+      "Stages": {
+        "Default": [
+          {
+            "Duration": {
+              "Min": 10500,
+              "Max": 10500
+            },
+            "Type": "BlockState",
+            "State": "default"
+          },
+          {
+            "Duration": {
+              "Min": 37950,
+              "Max": 37950
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage1"
+          },
+          {
+            "Duration": {
+              "Min": 37950,
+              "Max": 37950
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage2"
+          },
+          {
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow_Stage_Complete",
+            "State": "StageFinal"
+          }
+        ],
+        "Harvested": [
+          {
+            "Duration": {
+              "Min": 37950,
+              "Max": 37950
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage1"
+          },
+          {
+            "Duration": {
+              "Min": 37950,
+              "Max": 37950
+            },
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow",
+            "State": "Stage2"
+          },
+          {
+            "Type": "BlockState",
+            "SoundEventId": "SFX_Crops_Grow_Stage_Complete",
+            "State": "StageFinal"
+          }
+        ]
+      },
+      "StartingStageSet": "Default",
+      "ActiveGrowthModifiers": [
+        "Fertilizer",
+        "Water",
+        "LightLevel"
+      ],
+      "StageSetAfterHarvest": "Harvested"
+    },
+    "Gathering": {
+      "Soft": {
+        "DropList": "Drops_Plant_Crop_Beet_Eternal_Block"
+      }
+    }
+  },
+  "Quality": "Uncommon",
+  "Icon": "Icons/ItemsGenerated/Plant_Crop_Beet_Block_Eternal.png",
+  "IconProperties": {
+    "Scale": 1.115,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -4.2
+    ]
+  }
+}

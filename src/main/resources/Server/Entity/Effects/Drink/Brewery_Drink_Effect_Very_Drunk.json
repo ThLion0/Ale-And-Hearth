@@ -1,0 +1,62 @@
+{
+  "RawStatModifiers": {
+    "Health": [
+      {
+        "Amount": 40,
+        "CalculationType": "Additive"
+      }
+    ]
+  },
+  "StatModifiers": {},
+  "OverlapBehavior": "Overwrite",
+  "Infinite": true,
+  "Debuff": true,
+  "StatusEffectIcon": "Icons/ItemsGenerated/Brewery_Beer_Mug.png",
+  "ApplicationEffects": {
+    "MouseSensitivityAdjustmentTarget": 0.33,
+    "HorizontalSpeedMultiplier": 0.8,
+    "Particles": [
+      {
+        "SystemId": "Block_Lava_Bubbles",
+        "PositionOffset": {
+          "Y": 0.45
+        },
+        "DetachedFromModel": false,
+        "Scale": 1,
+        "Color": "#ddff00",
+        "TargetEntityPart": "Entity",
+        "TargetNodeName": ""
+      }
+    ],
+    "FirstPersonParticles": [
+      {
+        "SystemId": "Block_Lava_Bubbles",
+        "PositionOffset": {
+          "Y": 0.3
+        },
+        "Scale": 0.7,
+        "Color": "#ddff00"
+      }
+    ]
+  },
+  "DamageResistance": {
+    "Physical": [
+      {
+        "Amount": 0.26,
+        "CalculationType": "Multiplicative"
+      }
+    ],
+    "Projectile": [
+      {
+        "Amount": 0.26,
+        "CalculationType": "Multiplicative"
+      }
+    ],
+    "Poison": [
+      {
+        "Amount": 0.23,
+        "CalculationType": "Multiplicative"
+      }
+    ]
+  }
+}

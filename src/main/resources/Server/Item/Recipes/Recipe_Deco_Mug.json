@@ -1,0 +1,26 @@
+{
+  "Input": [
+    {
+      "ResourceTypeId": "Wood_Planks",
+      "Quantity": 1
+    },
+    {
+      "ItemId": "Ingredient_Stick",
+      "Quantity": 1
+    }
+  ],
+  "PrimaryOutput": {
+    "ItemId": "Deco_Mug",
+    "Quantity": 1
+  },
+  "BenchRequirement": [
+    {
+      "Type": "Crafting",
+      "Id": "Bench_Brewing_Bench",
+      "Categories": [
+        "Bench_Brewing_Bench_Equipment"
+      ]
+    }
+  ],
+  "ItemLevel": 1
+}

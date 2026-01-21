@@ -1,0 +1,32 @@
+{
+  "RawStatModifiers": {
+    "Health": [
+      {
+        "Amount": 10,
+        "CalculationType": "Additive"
+      }
+    ]
+  },
+  "StatModifiers": {},
+  "OverlapBehavior": "Overwrite",
+  "Infinite": true,
+  "Debuff": true,
+  "StatusEffectIcon": "Icons/ItemsGenerated/Brewery_Beer_Mug.png",
+  "ApplicationEffects": {
+    "MouseSensitivityAdjustmentTarget": 0.85
+  },
+  "DamageResistance": {
+    "Physical": [
+      {
+        "Amount": 0.05,
+        "CalculationType": "Multiplicative"
+      }
+    ],
+    "Projectile": [
+      {
+        "Amount": 0.05,
+        "CalculationType": "Multiplicative"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Ingredient_Yeasts.name"
+  },
+  "Parent": "Template_Food",
+  "ResourceTypes": [
+    {
+      "Id": "Foods"
+    }
+  ],
+  "Quality": "Common",
+  "Consumable": false,
+  "Interactions": {},
+  "BlockType": {
+    "Material": "Empty",
+    "DrawType": "Model",
+    "CustomModel": "Resources/Ingredients/Yeasts.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/Ingredients/Yeasts.png",
+        "Weight": 1
+      }
+    ],
+    "HitboxType": "Food_Medium",
+    "ParticleColor": "#d9daca",
+    "CustomModelScale": 0.8
+  },
+  "Scale": 1,
+  "IconProperties": {
+    "Scale": 0.9,
+    "Rotation": [
+      5,
+      77,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -6
+    ]
+  },
+  "Recipe": {
+    "TimeSeconds": 1.5,
+    "Input": [
+      {
+        "ItemId": "*Deco_Mug_State_Filled_Water",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Plant_Crop_Wheat_Item",
+        "Quantity": 1
+      },
+      {
+        "ItemId": "Ingredient_Sugar",
+        "Quantity": 1
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Type": "Crafting",
+        "Id": "Bench_Brewing_Bench",
+        "Categories": [
+          "Bench_Brewing_Bench_Equipment"
+        ]
+      }
+    ],
+    "OutputQuantity": 3
+  },
+  "MaxStack": 100,
+  "ItemLevel": 16,
+  "DropOnDeath": true,
+  "Icon": "Icons/ItemsGenerated/Ingredient_Yeasts.png"
+}

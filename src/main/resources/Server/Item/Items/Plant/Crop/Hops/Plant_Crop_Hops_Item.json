@@ -1,0 +1,32 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Plant_Crop_Hops.name"
+  },
+  "Parent": "Template_Crop_Item",
+  "Quality": "Uncommon",
+  "PlayerAnimationsId": "Item",
+  "Categories": [
+    "Items.Ingredients"
+  ],
+  "IconProperties": {
+    "Scale": 1,
+    "Rotation": [
+      25,
+      25,
+      0
+    ],
+    "Translation": [
+      -1,
+      -3
+    ]
+  },
+  "Model": "Resources/Ingredients/Hops.blockymodel",
+  "Texture": "Resources/Ingredients/Hops.png",
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Left.blockyanim",
+  "ItemEntity": {
+    "ParticleSystemId": null
+  },
+  "Consumable": false,
+  "DropOnDeath": true,
+  "Icon": "Icons/ItemsGenerated/Plant_Crop_Hops_Item.png"
+}
