@@ -18,7 +18,5 @@ tasks {
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
         from("src/main/resources")
-
-        destinationDirectory = file("C:/Users/egorv/AppData/Roaming/Hytale/UserData/Mods")
     }
 }

@@ -162,6 +162,11 @@
     },
     "CustomModelAnimation": "Blocks/Animations/Fire/Fire_Burn.blockyanim",
     "BlockParticleSetId": "Stone",
+    "Supporting": {
+      "Up": [
+        {}
+      ]
+    },
     "Support": {
       "Down": [
         {

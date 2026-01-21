@@ -39,7 +39,7 @@
     "Flags": {},
     "Gathering": {
       "Breaking": {
-        "GatherType": "Woods"
+        "GatherType": "Rocks"
       },
       "Soft": {
         "IsWeaponBreakable": false
