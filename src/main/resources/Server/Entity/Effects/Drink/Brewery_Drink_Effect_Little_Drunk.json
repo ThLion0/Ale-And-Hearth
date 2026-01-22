@@ -11,7 +11,7 @@
   "OverlapBehavior": "Overwrite",
   "Infinite": true,
   "Debuff": true,
-  "StatusEffectIcon": "Icons/ItemsGenerated/Brewery_Beer_Mug.png",
+  "StatusEffectIcon": "UI/StatusEffects/Drunk_Levels/Little_Drunk.png",
   "ApplicationEffects": {
     "MouseSensitivityAdjustmentTarget": 0.75
   },

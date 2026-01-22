@@ -1,6 +1,6 @@
 {
   "Group": "HyBox",
-  "Name": "Brewery",
+  "Name": "AleAndHearth",
   "Version": "${version}",
   "Main": "com.thlion_.brewery.BreweryPlugin",
   "ServerVersion": "*",

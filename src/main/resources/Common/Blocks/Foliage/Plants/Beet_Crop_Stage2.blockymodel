@@ -30,31 +30,31 @@
             "stretch": {"x": 0.53549, "y": 0.86415, "z": 0.4929},
             "settings": {
               "isPiece": false,
-              "size": {"x": 16, "y": 8, "z": 16}
+              "size": {"x": 8, "y": 8, "z": 8}
             },
             "textureLayout": {
               "back": {
-                "offset": {"x": 0, "y": 16},
+                "offset": {"x": 2, "y": 16},
                 "mirror": {"x": false, "y": false},
                 "angle": 0
               },
               "right": {
-                "offset": {"x": 16, "y": 16},
+                "offset": {"x": 18, "y": 16},
                 "mirror": {"x": false, "y": false},
                 "angle": 0
               },
               "front": {
-                "offset": {"x": 0, "y": 16},
+                "offset": {"x": 2, "y": 16},
                 "mirror": {"x": false, "y": false},
                 "angle": 0
               },
               "left": {
-                "offset": {"x": 16, "y": 16},
+                "offset": {"x": 18, "y": 16},
                 "mirror": {"x": false, "y": false},
                 "angle": 0
               },
               "top": {
-                "offset": {"x": 0, "y": 0},
+                "offset": {"x": 4, "y": 4},
                 "mirror": {"x": false, "y": false},
                 "angle": 0
               },
