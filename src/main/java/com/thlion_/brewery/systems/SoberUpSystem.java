@@ -1,5 +1,7 @@
 package com.thlion_.brewery.systems;
 
+import com.hypixel.hytale.builtin.beds.sleep.components.PlayerSleep;
+import com.hypixel.hytale.builtin.beds.sleep.components.PlayerSomnolence;
 import com.hypixel.hytale.component.ArchetypeChunk;
 import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.Ref;
@@ -14,7 +16,6 @@ import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.entity.component.Invulnerable;
 import com.hypixel.hytale.server.core.modules.entity.damage.DeathComponent;
-import com.hypixel.hytale.server.core.modules.entitystats.EntityStatMap;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.thlion_.brewery.BreweryPlugin;
@@ -25,6 +26,7 @@ import com.thlion_.brewery.utils.Utils;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Arrays;
+import java.util.List;
 
 public class SoberUpSystem extends EntityTickingSystem<EntityStore> {
     private static final String CAMERA_SHAKE_EFFECT = "Drunk_Shake";
@@ -36,10 +38,7 @@ public class SoberUpSystem extends EntityTickingSystem<EntityStore> {
     private final float cameraDrunkEffectMin;
     private final float cameraDrunkEffectMax;
 
-    private final float drunkRequiredTier1;
-    private final float drunkRequiredTier2;
-    private final float drunkRequiredTier3;
-    private final float drunkRequiredTier4;
+    private final List<DrunkTier> drunkTiers;
 
     public SoberUpSystem() {
         BreweryConfig config = BreweryPlugin.getConfig();
@@ -50,11 +49,24 @@ public class SoberUpSystem extends EntityTickingSystem<EntityStore> {
         this.cameraDrunkEffectMin = config.getCameraDrunkEffectMin();
         this.cameraDrunkEffectMax = config.getCameraDrunkEffectMax();
 
-        this.drunkRequiredTier1 = config.getDrunkRequiredTier1();
-        this.drunkRequiredTier2 = config.getDrunkRequiredTier2();
-        this.drunkRequiredTier3 = config.getDrunkRequiredTier3();
-        this.drunkRequiredTier4 = config.getDrunkRequiredTier4();
+        this.drunkTiers = this.createTierList(config);
     }
+
+    private @Nonnull List<DrunkTier> createTierList(@Nonnull BreweryConfig config) {
+        float tier1 = config.getDrunkRequiredTier1();
+        float tier2 = config.getDrunkRequiredTier2();
+        float tier3 = config.getDrunkRequiredTier3();
+        float tier4 = config.getDrunkRequiredTier4();
+
+        return List.of(
+            new DrunkTier(tier4, "Brewery_Drink_Effect_Very_Drunk"),
+            new DrunkTier(tier3, "Brewery_Drink_Effect_Drunk"),
+            new DrunkTier(tier2, "Brewery_Drink_Effect_Little_Drunk"),
+            new DrunkTier(tier1, "Brewery_Drink_Effect_Sober")
+        );
+    }
+
+    private record DrunkTier(float threshold, String effectName) {}
 
     @Override
     public void tick(
@@ -67,6 +79,7 @@ public class SoberUpSystem extends EntityTickingSystem<EntityStore> {
         DrunkComponent drunkComponent = archetypeChunk.getComponent(index, DrunkComponent.getComponentType());
         Player playerComponent = archetypeChunk.getComponent(index, Player.getComponentType());
         PlayerRef playerRefComponent = archetypeChunk.getComponent(index, PlayerRef.getComponentType());
+        PlayerSomnolence playerSomnolence = archetypeChunk.getComponent(index, PlayerSomnolence.getComponentType());
         if (drunkComponent == null || playerComponent == null || playerRefComponent == null) return;
 
         Ref<EntityStore> ref = playerComponent.getReference();
@@ -89,6 +102,14 @@ public class SoberUpSystem extends EntityTickingSystem<EntityStore> {
 
             this.applyShakeEffect(playerRefComponent, drunkLevel);
         }
+
+        if (playerSomnolence != null) {
+            if (playerSomnolence.getSleepState() instanceof PlayerSleep.Slumber) {
+                drunkComponent.setDrunkLevel(0.0F);
+                this.updateDrunkEffects(store, ref, playerRefComponent, drunkComponent, false);
+                this.removeShakeEffect(playerRefComponent);
+            }
+        }
     }
 
     public void updateDrunkEffects(
@@ -103,28 +124,18 @@ public class SoberUpSystem extends EntityTickingSystem<EntityStore> {
 
         float drunkLevel = drunkComponent.getDrunkLevel();
 
-        // State 4
-        if (drunkLevel >= this.drunkRequiredTier4) {
-            this.clearDrunkEffects(store, ref, effectComponent);
-            this.addNewDrunkEffect(store, ref, effectComponent, "Brewery_Drink_Effect_Very_Drunk");
-        }
-        // State 3
-        else if (drunkLevel >= this.drunkRequiredTier3) {
-            this.clearDrunkEffects(store, ref, effectComponent);
-            this.addNewDrunkEffect(store, ref, effectComponent, "Brewery_Drink_Effect_Drunk");
-        }
-        // State 2
-        else if (drunkLevel >= this.drunkRequiredTier2) {
-            this.clearDrunkEffects(store, ref, effectComponent);
-            this.addNewDrunkEffect(store, ref, effectComponent, "Brewery_Drink_Effect_Little_Drunk");
-        }
-        // State 1
-        else if (drunkLevel >= this.drunkRequiredTier1) {
-            this.clearDrunkEffects(store, ref, effectComponent);
-            this.addNewDrunkEffect(store, ref, effectComponent, "Brewery_Drink_Effect_Sober");
-        }
-        // If no drunk, then clear effects
-        else {
+        DrunkTier drunkTier = this.drunkTiers.stream()
+            .filter(tier -> drunkLevel >= tier.threshold)
+            .findFirst()
+            .orElse(null);
+
+        if (drunkTier != null) {
+            if (!Utils.hasActiveEffect(effectComponent, drunkTier.effectName)) {
+                this.clearDrunkEffects(store, ref, effectComponent);
+                this.addNewDrunkEffect(store, ref, effectComponent, drunkTier.effectName);
+            }
+        } else {
+            // If no drunk, then clear effects
             this.clearDrunkEffects(store, ref, effectComponent);
         }
 
@@ -138,7 +149,6 @@ public class SoberUpSystem extends EntityTickingSystem<EntityStore> {
     public Query<EntityStore> getQuery() {
         return Query.and(
             DrunkComponent.getComponentType(),
-            EntityStatMap.getComponentType(),
             Player.getComponentType(),
             PlayerRef.getComponentType(),
             Query.not(DeathComponent.getComponentType()),
@@ -157,6 +167,13 @@ public class SoberUpSystem extends EntityTickingSystem<EntityStore> {
         );
 
         playerRef.getPacketHandler().writeNoCache(cameraEffect.createCameraShakePacket(intensity));
+    }
+
+    private void removeShakeEffect(@Nonnull PlayerRef playerRef) {
+        CameraEffect cameraEffect = CameraEffect.getAssetMap().getAsset(CAMERA_SHAKE_EFFECT);
+        assert cameraEffect != null;
+
+        playerRef.getPacketHandler().writeNoCache(cameraEffect.createCameraShakePacket(0.0F));
     }
 
     private void clearDrunkEffects(

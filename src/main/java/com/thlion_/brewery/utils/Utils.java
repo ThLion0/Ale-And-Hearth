@@ -2,6 +2,7 @@ package com.thlion_.brewery.utils;
 
 import com.hypixel.hytale.server.core.asset.type.item.config.Item;
 import com.hypixel.hytale.server.core.entity.effect.ActiveEntityEffect;
+import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
 
 import javax.annotation.Nonnull;
 import java.lang.reflect.Field;
@@ -14,7 +15,7 @@ public class Utils {
         "Brewery_Drink_Effect_Very_Drunk"
     };
 
-    public static boolean isEffectDrunkRelated(ActiveEntityEffect entityEffect) {
+    public static boolean isEffectDrunkRelated(@Nonnull ActiveEntityEffect entityEffect) {
         try {
             String effectId = getActiveEntityEffectId(entityEffect);
             for (String id : effectIdList) {
@@ -29,13 +30,31 @@ public class Utils {
         }
     }
 
-    private static String getActiveEntityEffectId(ActiveEntityEffect entityEffect) throws NoSuchFieldException, IllegalAccessException {
+    public static boolean hasActiveEffect(@Nonnull EffectControllerComponent effectComponent, @Nonnull String effectId) {
+        ActiveEntityEffect[] activeEffects = effectComponent.getAllActiveEntityEffects();
+        if (activeEffects == null) return false;
+
+        for (ActiveEntityEffect effect : activeEffects) {
+            try {
+                String id = getActiveEntityEffectId(effect);
+                if (id.equals(effectId)) {
+                    return true;
+                }
+            } catch (NoSuchFieldException | IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        return false;
+    }
+
+    public static String getActiveEntityEffectId(@Nonnull ActiveEntityEffect entityEffect) throws NoSuchFieldException, IllegalAccessException {
         Field f = ActiveEntityEffect.class.getDeclaredField("entityEffectId");
         f.setAccessible(true);
         return (String) f.get(entityEffect);
     }
 
-    public static boolean isItemStackHasTag(@Nonnull Item item, String key, String tag) {
+    public static boolean isItemStackHasTag(@Nonnull Item item, @Nonnull String key, @Nonnull String tag) {
         String[] tagTypeValues = item.getData().getRawTags().get(key);
 
         for (String itemTag : tagTypeValues) {

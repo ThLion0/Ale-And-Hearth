@@ -2,8 +2,8 @@ plugins {
     id("java")
 }
 
-group = "com.thlion_"
-version = "0.0.3"
+group = property("maven_group") as String
+version = property("plugin_version") as String
 
 repositories {
     mavenCentral()
