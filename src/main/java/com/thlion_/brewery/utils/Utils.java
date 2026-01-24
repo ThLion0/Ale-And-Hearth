@@ -6,6 +6,7 @@ import com.hypixel.hytale.server.core.entity.effect.EffectControllerComponent;
 
 import javax.annotation.Nonnull;
 import java.lang.reflect.Field;
+import java.util.Map;
 
 public class Utils {
     private static final String[] effectIdList = new String[]{
@@ -54,11 +55,49 @@ public class Utils {
         return (String) f.get(entityEffect);
     }
 
+    /**
+     * NEW METHOD: Check if item has any brewery-related tags
+     */
+    public static boolean hasBreweryTag(@Nonnull Item item) {
+        Map<String, String[]> tags = item.getData().getRawTags();
+        if (tags == null || tags.isEmpty()) {
+            return false;
+        }
+        
+        // Check for any brewery-specific tag keys
+        return tags.containsKey("Type") && 
+               tags.get("Type") != null &&
+               hasBreweryTypeTag(tags.get("Type"));
+    }
+    
+    /**
+     * Check if any tag value is brewery-related
+     */
+    private static boolean hasBreweryTypeTag(@Nonnull String[] tagValues) {
+        for (String tag : tagValues) {
+            if (tag != null && tag.startsWith("Brewery_")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * ENHANCED: Added null safety checks
+     */
     public static boolean isItemStackHasTag(@Nonnull Item item, @Nonnull String key, @Nonnull String tag) {
-        String[] tagTypeValues = item.getData().getRawTags().get(key);
+        Map<String, String[]> tags = item.getData().getRawTags();
+        if (tags == null || !tags.containsKey(key)) {
+            return false;
+        }
+        
+        String[] tagTypeValues = tags.get(key);
+        if (tagTypeValues == null) {
+            return false;
+        }
 
         for (String itemTag : tagTypeValues) {
-            if (itemTag.equals(tag)) {
+            if (itemTag != null && itemTag.equals(tag)) {
                 return true;
             }
         }
