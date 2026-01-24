@@ -36,7 +36,7 @@ public class BreweryPlayerReadyEvent {
                     existing.setEffectTime(0.0F);
                 }
             } catch (Exception e) {
-                BreweryPlugin.LOGGER.error("Failed to handle DrunkComponent for player", e);
+                BreweryPlugin.LOGGER.error("Failed to handle DrunkComponent for player: " + e.getMessage());
             }
         });
     }
